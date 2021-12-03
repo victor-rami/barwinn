@@ -1,0 +1,28 @@
+{
+  "name": "erikbarwin",
+  "version": "1.0.0",
+  "description": "crypto prediction bot on Aderall",
+  "main": "index.js",
+  "dependencies": {
+    "@octokit/rest": "^18.12.0",
+    "chalk": "^5.0.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^6.0.0",
+    "dotenv": "^10.0.0",
+    "ethers": "^5.5.2",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.0",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.5",
+    "touch": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"ERIK BARWIN!!!!\" && exit 1"
+  },
+  "keywords": [],
+  "author": "WNFTT",
+  "license": "ISC",
+  "type": "module"
+}
