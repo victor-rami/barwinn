@@ -15,18 +15,19 @@ sayDisclaimer();
 // Run user setup prompts
 async function runSetup() {
   try {
-    let runContext = await getRunContext();
+    const runContext = await getRunContext();
     console.log(chalk.greenBright.italic("Creating config file.."));
-    runContextString = JSON.stringify(runContext);
-    fs.writeFile("config.json", runContextString);
-    console.log(chalk.greenBright.italic.runContext);
   } catch {
     console.error();
   }
+
+  const runContextString = JSON.stringify(runContext);
+  fs.writeFile("config.json", runContextString);
 };
 
 let config = directoryExists(CONFIG_FILE)
   ? readConfig(CONFIG_FILE)
   : runSetup();
 
-console.log(config);
+
+  config;
