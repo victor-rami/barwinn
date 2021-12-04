@@ -7,6 +7,13 @@ import {
 } from "./lib/cli.js";
 import { fileExists } from "./lib/utils.js";
 
+//Refactor for adding more networks and Dex tools.
+import {
+    BNB_URI,
+    BNB_PANCAKE_ADDRESS,
+    BNB_PANCAKE_ABI
+ } from "./lib/networks/bsc.js";
+
 // Load CLI Welcome
 clear();
 runHerro();
@@ -19,6 +26,9 @@ if (!fileExists('.env')) {
 };
 
 dotenv.config();
+
+const ABI = BNB_PANCAKE_ABI;
+const
 
 console.log(process.env.COMMIT_AMOUNT);
 
