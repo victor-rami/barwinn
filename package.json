@@ -1,7 +1,7 @@
 {
   "name": "erikbarwin",
   "version": "1.0.0",
-  "description": "crypto prediction bot on Aderall",
+  "description": "crypto prediction bot.",
   "main": "index.js",
   "dependencies": {
     "@octokit/rest": "^18.12.0",

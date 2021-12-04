@@ -1,19 +1,25 @@
 import clear from "clear";
 import dotenv from 'dotenv';
-// import fs from "fs";
-// import chalk from "chalk";
-// import { currentDirectory, directoryExists } from "./lib/files.js";
-import { sayDisclaimer, sayHerro } from "./lib/herro.js";
-import { newRunContext } from "./lib/herro.js";
-
+import {
+    sayDisclaimer,
+    sayHerro,
+    newRunContext
+} from "./lib/cli.js";
+import { fileExists } from "./lib/utils.js";
 
 // Load CLI Welcome
 clear();
 sayHerro();
 sayDisclaimer();
 
-// Set bot params and env variables
-// runSetup();
-const setup = await newRunContext();
+// Check for .env file. If true the user will be prompted to
+// set the run context.
+if (!fileExists('.env')) {
+    return await newRunContext();
+};
+
+dotenv.config();
+
+console.log(process.env.CHAIN);
 
 
