@@ -1,25 +1,25 @@
 import clear from "clear";
 import dotenv from 'dotenv';
 import {
-    sayDisclaimer,
-    sayHerro,
+    runDisclaimer,
+    runHerro,
     newRunContext
 } from "./lib/cli.js";
 import { fileExists } from "./lib/utils.js";
 
 // Load CLI Welcome
 clear();
-sayHerro();
-sayDisclaimer();
+runHerro();
+runDisclaimer();
 
 // Check for .env file. If true the user will be prompted to
 // set the run context.
 if (!fileExists('.env')) {
-    return await newRunContext();
+    await newRunContext();
 };
 
 dotenv.config();
 
-console.log(process.env.CHAIN);
+console.log(process.env.COMMIT_AMOUNT);
 
 
