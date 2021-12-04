@@ -1,18 +1,19 @@
 import clear from "clear";
 import dotenv from 'dotenv';
+import { fileExists,sleep } from "./lib/utils.js";
+
 import {
     runDisclaimer,
     runHerro,
     newRunContext
 } from "./lib/cli.js";
-import { fileExists } from "./lib/utils.js";
 
-//Refactor for adding more networks and Dex tools.
+import {setSignor,setContract} from "./lib/ethers.js";
 import {
     BNB_URI,
     BNB_PANCAKE_ADDRESS,
-    BNB_PANCAKE_ABI
- } from "./lib/networks/bsc.js";
+    BNB_PANCAKE_ABI,
+  } from "./lib/bsc/bsc-config.js";
 
 // Load CLI Welcome
 clear();
@@ -27,9 +28,13 @@ if (!fileExists('.env')) {
 
 dotenv.config();
 
-const ABI = BNB_PANCAKE_ABI;
-const
+// Remove the lead time defined when setup from max (5 mins)
+const SLEEP_TIME = (300 - process.env.LEAD_SECONDS ) * 100
 
-console.log(process.env.COMMIT_AMOUNT);
+// Blockchain web3 setups
+const signer = setSignor(BNB_URI);
+const contract = setContract(BNB_PANCAKE_ADDRESS,BNB_PANCAKE_ABI,signer);
 
+// Refactor to fix argument
+await sleep(SLEEP_TIME);
 
